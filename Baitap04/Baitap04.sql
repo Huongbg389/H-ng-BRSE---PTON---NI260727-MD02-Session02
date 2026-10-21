@@ -1,0 +1,10 @@
+CREATE DATABASE UserAccount;
+USE UserAccount;
+
+CREATE TABLE users (
+    UserID INT PRIMARY KEY AUTO_INCREMENT,
+    UserName VARCHAR(50) UNIQUE,
+    Password VARCHAR(20) NOT NULL,
+    Statuss VARCHAR(100) DEFAULT 'ACTIVE' 
+    CHECK(Statuss IN ('ACTIVE', 'INACTIVE'))
+);
